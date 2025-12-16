@@ -38,9 +38,10 @@ How to deal with double letters
 // 
 
 // Loop through the letters in the word to check if they are the same value
-// IF wordleWord[index] === inputWord[index], style.background-color = 'red'
+// IF wordleWord[index] === inputWord[index], style.background-color = 'green'
 // ELSE IF wordleWord.contains(inputWord[index]), style.background-color = 'yellow'
 // ELSE gray
+// letter count
 
 // render to check if win condition is met, 
 IF (wordleWord === inputWord), 

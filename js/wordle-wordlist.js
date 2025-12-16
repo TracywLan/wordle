@@ -1,6 +1,4 @@
-
-
-export const wordleWordList = [
+window.wordleWordList = [
   "humph",
   "sissy",
   "rebut",
