@@ -22,4 +22,43 @@ Wordle word list
 
 How to deal with double letters
 
+// Define array for wordleWords
+// define a random index
+// Define a random wordleWord from the wordle array list
+
+// Input a 5 letter word in input
+// Loop through wordle list to see if array.contains entered word 
+// else return error (not enough letters or not a word)
+
+
+// Dom for click/press enter button that push the entered word to the game container
+// Define inputWord for the word entered
+// Loop through the input word so each letter is separated into individual div(inputWord[${index}].textElement = wordHolder[${index}])
+
+// 
+
+// Loop through the letters in the word to check if they are the same value
+// IF wordleWord[index] === inputWord[index], style.background-color = 'red'
+// ELSE IF wordleWord.contains(inputWord[index]), style.background-color = 'yellow'
+// ELSE gray
+
+// render to check if win condition is met, 
+IF (wordleWord === inputWord), 
+win = true,
+input disable,
+pop win message (As a pop up new window, everything else is blurred out)
+
+
+// When new word is inputted, inputWord refresh, go through loop again
+// will push the new input to the next row div in the game module(maybe have a row counter?)
+// when rowcounter is > 6, push lose message, play again button
+
+// Select the play again button element and add an event listener. On click:
+    // Reset the user's inputWord to nothing
+    // Reset the computer's choice to nothing
+    // Reset the game message to nothing
+    // Reset all game display to nothing
+    // Reset win/lose condition to nothing
+
+
 

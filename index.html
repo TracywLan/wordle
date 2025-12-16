@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="cdn.jsdelivr.net"> -->
+    <script defer src="./js/app.js"></script>
+    <script defer type="module" src="./js/wordle-wordlist.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Wordle</h1>
+        <!-- <p>You have 6 guesses!</p> -->
+    </header>
+    <div class="game-container">
+        <div class="board-container">
+        <div class="board">
+            <div id="row1" class="row">
+                <div class="letters">G</div>
+                <div class="letters">A</div>
+                <div class="letters">M</div>
+                <div class="letters">E</div>
+                <div class="letters">S</div>
+            </div>
+            <div id="row2" class="row">
+                <div class="letters">R</div>
+                <div class="letters">I</div>
+                <div class="letters">V</div>
+                <div class="letters">E</div>
+                <div class="letters">R</div>
+            </div>
+                <div id="row3" class="row">
+                <div class="letters">R</div>
+                <div class="letters">I</div>
+                <div class="letters">V</div>
+                <div class="letters">E</div>
+                <div class="letters">R</div>
+            </div>
+                <div id="row4" class="row">
+                <div class="letters">R</div>
+                <div class="letters">I</div>
+                <div class="letters">V</div>
+                <div class="letters">E</div>
+                <div class="letters">R</div>
+            </div>
+                <div id="row5" class="row">
+                <div class="letters"></div>
+                <div class="letters"></div>
+                <div class="letters"></div>
+                <div class="letters"></div>
+                <div class="letters"></div>
+            </div>
+                <div id="row6" class="row">
+                <div class="letters"></div>
+                <div class="letters"></div>
+                <div class="letters"></div>
+                <div class="letters"></div>
+                <div class="letters"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <div class="input-section">
+            <input type="text" maxlength="5" minlength="5">
+            <button class="btn">
+                ENTER
+                <i class="bi">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+                    </svg> -->
+                </i>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
