@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="cdn.jsdelivr.net"> -->
-     <script defer src="./js/wordle-wordlist.js"></script>
+    <script defer src="./js/wordle-wordlist.js"></script>
     <script defer src="./js/app.js"></script>
     
 
@@ -14,52 +13,52 @@
 <body>
     <header>
         <h1>Welcome to Wordle</h1>
-        <!-- <p>You have 6 guesses!</p> -->
+        <p id = "display-message"></p>
     </header>
     <div class="game-container">
         <div class="board-container">
         <div class="board">
             <div id="row0" class="row">
-                <div id='row0-0' class="letters">G</div>
-                <div id='row0-1' class="letters">A</div>
-                <div id='row0-2' class="letters">M</div>
-                <div id='row0-3' class="letters">E</div>
-                <div id='row0-4' class="letters">S</div>
+                <div id='row0-0' class="tiles">G</div>
+                <div id='row0-1' class="tiles">A</div>
+                <div id='row0-2' class="tiles">M</div>
+                <div id='row0-3' class="tiles">E</div>
+                <div id='row0-4' class="tiles">S</div>
             </div>
             <div id="row1" class="row">
-                <div id='row1-0' class="letters">G</div>
-                <div id='row1-1' class="letters">A</div>
-                <div id='row1-2' class="letters">M</div>
-                <div id='row1-3' class="letters">E</div>
-                <div id='row1-4' class="letters">S</div>
+                <div id='row1-0' class="tiles">G</div>
+                <div id='row1-1' class="tiles">A</div>
+                <div id='row1-2' class="tiles">M</div>
+                <div id='row1-3' class="tiles">E</div>
+                <div id='row1-4' class="tiles">S</div>
             </div>
                 <div id="row2" class="row">
-                <div id='row2-0' class="letters">G</div>
-                <div id='row2-1' class="letters">A</div>
-                <div id='row2-2' class="letters">M</div>
-                <div id='row2-3' class="letters">E</div>
-                <div id='row2-4' class="letters">S</div>
+                <div id='row2-0' class="tiles">G</div>
+                <div id='row2-1' class="tiles">A</div>
+                <div id='row2-2' class="tiles">M</div>
+                <div id='row2-3' class="tiles">E</div>
+                <div id='row2-4' class="tiles">S</div>
             </div>
                 <div id="row3" class="row">
-                <div id='row3-0' class="letters">G</div>
-                <div id='row3-1' class="letters">A</div>
-                <div id='row3-2' class="letters">M</div>
-                <div id='row3-3' class="letters">E</div>
-                <div id='row3-4' class="letters">S</div>
+                <div id='row3-0' class="tiles">G</div>
+                <div id='row3-1' class="tiles">A</div>
+                <div id='row3-2' class="tiles">M</div>
+                <div id='row3-3' class="tiles">E</div>
+                <div id='row3-4' class="tiles">S</div>
             </div>
                 <div id="row4" class="row">
-                <div id='row4-0' class="letters">G</div>
-                <div id='row4-1' class="letters">A</div>
-                <div id='row4-2' class="letters">M</div>
-                <div id='row4-3' class="letters">E</div>
-                <div id='row4-4' class="letters">S</div>
+                <div id='row4-0' class="tiles">G</div>
+                <div id='row4-1' class="tiles">A</div>
+                <div id='row4-2' class="tiles">M</div>
+                <div id='row4-3' class="tiles">E</div>
+                <div id='row4-4' class="tiles">S</div>
             </div>
                 <div id="row5" class="row">
-                <div id='row5-0' class="letters"></div>
-                <div id='row5-1' class="letters"></div>
-                <div id='row5-2' class="letters"></div>
-                <div id='row5-3' class="letters"></div>
-                <div id='row5-4' class="letters"></div>
+                <div id='row5-0' class="tiles"></div>
+                <div id='row5-1' class="tiles"></div>
+                <div id='row5-2' class="tiles"></div>
+                <div id='row5-3' class="tiles"></div>
+                <div id='row5-4' class="tiles"></div>
             </div>
         </div>
         </div>
@@ -67,14 +66,9 @@
 
     <div class="input-container">
         <div class="input-section">
-            <input type="text" maxlength="5" minlength="5">
+            <input type="text" maxlength="5" minlength="5"  oninput="lettersOnly(this)">
             <button class="btn">
                 ENTER
-                <!-- <i class="bi">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
-                    </svg>
-                </i> -->
             </button>
         </div>
     </div>
