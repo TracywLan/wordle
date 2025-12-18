@@ -115,7 +115,7 @@ function winCondition(inputWord){
         inputElement.disabled = true;
         btnElement.disabled = true;
         btnElement.classList.add('no-hover');
-        displayMessage.textContent = 'No more guesses left! Try again?'
+        displayMessage.textContent = `The word was ${secretWord}. Try again?`
         resetBtn.style.display = "block"
     } else{
         return;
