@@ -13,8 +13,10 @@
 <body>
     <header>
         <h1>Welcome to Wordle</h1>
-        <p id = "display-message"></p>
+        <p id="display-message"></p>
+        <button id="reset-btn">RESET</button>
     </header>
+
     <div class="game-container">
         <div class="board-container">
         <div class="board">
@@ -67,11 +69,25 @@
     <div class="input-container">
         <div class="input-section">
             <input type="text" maxlength="5" minlength="5"  oninput="lettersOnly(this)">
-            <button class="btn">
+            <button class="btn" id="enter-btn">
                 ENTER
             </button>
         </div>
     </div>
+
+    <section class="instructions">
+        <h2 id="instruction-title">How to Play</h2>
+        <p id="instructions">
+            The player attempts to guess a five-letter English word. The player enters a valid five-letter English word into the input, then clicks the Enter button or presses Enter on the keyboard. 
+            <ul>
+                <li>Green tiles show a guessed letter in the correct position</li>
+                <li>Yellow tiles indicate that the word contains the letter but in the wrong position</li>
+                <li>Gray tiles mean the letters are not in the word</li>
+            </ul>
+            Letters can repeat, and feedback applies accordingly.
+        </p>
+    </section>
+
 </body>
 
 </html>
