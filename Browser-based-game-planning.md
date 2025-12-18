@@ -43,6 +43,12 @@ How to deal with double letters
 // ELSE gray
 // letter count
 
+Check for double letters
+create a status array for each letter in the secret word,and a word count object.
+loop though the letters and mark any letter that wordleWord[index] === inputWord[index], change status in status array to green, decrease word count for that 
+
+
+
 // render to check if win condition is met, 
 IF (wordleWord === inputWord), 
 win = true,
