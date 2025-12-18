@@ -115,7 +115,7 @@ function winCondition(inputWord){
         inputElement.disabled = true;
         btnElement.disabled = true;
         btnElement.classList.add('no-hover');
-        displayMessage.textContent = `The word was ${secretWord}. Try again?`
+        displayMessage.textContent = `The word was ${secretWord}.`
         resetBtn.style.display = "block"
     } else{
         return;
@@ -131,7 +131,6 @@ function winCondition(inputWord){
     function handleButtonAction(){
         const trimmedValue = inputElement.value.trim().toUpperCase();
         const isRealWord = wordleDictionary.includes(trimmedValue.toLowerCase());
-        // console.log(trimmedValue);
         
         if (trimmedValue.length !== 5){
             displayMessage.textContent = 'Must be a 5 letter word!'
@@ -168,7 +167,6 @@ reset()
 
 // console.log(tiles);
 console.log('Word array',wordArray);
-
 console.log("Secret word:", secretWord);
 console.log("Input word:", inputWord);
 
