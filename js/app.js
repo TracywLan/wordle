@@ -1,24 +1,17 @@
-window.fiveLetterWords = []; // global array
+let wordleDictionary = [];
 
-    const WORD_LIST_URL = 'https://gist.githubusercontent.com/daemondevin/df09befaf533c380743bc2c378863f0c/raw/5-letter-words.txt';
-
-    async function loadWords() {
-    try {
-        const res = await fetch(WORD_LIST_URL);
-        const text = await res.text();
-        window.fiveLetterWords = text
-            .split(/\r?\n/)
-            .map(w => w.trim())
-            .filter(Boolean);
-        
-        console.log('Loaded', window.fiveLetterWords.length, 'words');
-        // console.log(window.fiveLetterWords); 
-    } catch (error) {
-        console.error('Failed to load words:', error);
-    }
+async function loadWordleDictionary() {
+    const response = await fetch('https://gist.githubusercontent.com/slushman/e112816f2894aecf013da881130e7805/raw/7fa83100c9235edc5edad5aef6e5b85dc1fdeb02/wordle-dictionary');
+    const text = await response.text();
+    wordleDictionary = eval(text);
+    console.log(wordleDictionary); 
+    return wordleDictionary;
 }
 
-loadWords();
+loadWordleDictionary();
+
+
+
 /*-------------------------------- Constants --------------------------------*/
 const btnElement = document.querySelector('.btn')
 const inputElement = document.querySelector('input')
@@ -43,6 +36,9 @@ function init(){
     inputElement.disabled = false;
     btnElement.disabled = false;
     let wordArray = [];
+    let inputWord = '';
+    let row = 0;
+    let tileIndex = 0;
 }
 
 
@@ -55,6 +51,9 @@ const targetTile = tiles[tileIndex];
 targetTile.textContent = inputWord[i];
 }
 }
+
+
+// function check
 
 
 function updateTileColor(inputWord){
@@ -105,36 +104,45 @@ function winCondition(inputWord){
         input.value = input.value.replace(/[^a-zA-Z]/g, '');
     }
 
-
-/*----------------------------- Event Listeners -----------------------------*/
-btnElement.addEventListener('click',() => {
+    function handleButtonAction(){
     const trimmedValue = inputElement.value.trim().toUpperCase();
-    const isRealWord = fiveLetterWords.includes(trimmedValue.toLowerCase());
+    const isRealWord = wordleDictionary.includes(trimmedValue.toLowerCase());
+    console.log(trimmedValue);
+    
 
     if (trimmedValue.length !== 5){
-        console.log(`must be a 5 letter word!`)
         displayMessage.textContent = 'Must be a 5 letter word!'
     }
     else if (!isRealWord){
-        console.log(`Please enter a real word`);
         displayMessage.textContent = 'Please enter a valid word'
     }
     else {
         inputWord = trimmedValue;
         wordArray.push(trimmedValue);
         inputElement.value = '';
-        
+        inputElement.focus();
     }
     
     letterInput(inputWord)
     updateTileColor(inputWord)
     winCondition(inputWord)
-})
+    }
+
+
+/*----------------------------- Event Listeners -----------------------------*/
+btnElement.addEventListener('click', handleButtonAction);
+inputElement.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        handleButtonAction();
+    }
+});
 
 
 
-console.log(tiles);
-console.log('word array',);
+// console.log(tiles);
+console.log('Word array',);
 
 console.log("Secret word:", secretWord);
 console.log("Input word:", inputWord);
+
