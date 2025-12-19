@@ -10,22 +10,23 @@ async function loadWordleDictionary() {
 loadWordleDictionary();
 
 /*-------------------------------- Constants --------------------------------*/
+
 const btnElement = document.querySelector('.btn')
 const inputElement = document.querySelector('input')
-
 const tiles = document.querySelectorAll('.tiles')
 const displayMessage = document.querySelector('#display-message')
 const resetBtn = document.getElementById('reset-btn')
+
 /*---------------------------- Variables (state) ----------------------------*/
 
 let wordArray = [];
 let secretWord = wordleWordList[Math.floor(Math.random() * wordleWordList.length)].toUpperCase();
 
 /*------------------------ Cached Element References ------------------------*/
+
 let inputWord = '';
 let row = 0;
 let tileIndex = 0;
-
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -36,6 +37,7 @@ function reset() {
     displayMessage.textContent = '';
     wordArray = [];
     inputWord = '';
+    inputElement.focus();
     row = 0;
     tileIndex = 0;
     resetBtn.style.display = "none"
@@ -115,7 +117,7 @@ function winCondition(inputWord){
         inputElement.disabled = true;
         btnElement.disabled = true;
         btnElement.classList.add('no-hover');
-        displayMessage.textContent = `The word was ${secretWord}.`
+        displayMessage.textContent = `The word was ${secretWord}`
         resetBtn.style.display = "block"
     } else{
         return;
@@ -165,6 +167,7 @@ resetBtn.addEventListener('click',()=>{
 reset()
 });
 
+reset()
 // console.log(tiles);
 console.log('Word array',wordArray);
 console.log("Secret word:", secretWord);
