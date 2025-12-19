@@ -49,6 +49,8 @@ I chose to make Wordle because I've been a big fan of the game. My friends and I
 - Display letters that have been used in the puzzle  
 - Allow input directly into boxes (like the real Wordle game)  
 - Add an on-screen keyboard  
+- add tile flip animation
+- add animation delay
 
 ---
 
