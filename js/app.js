@@ -181,7 +181,4 @@ hideOverlay();
 
 reset()
 
-console.log('Word array',wordArray);
-console.log("Secret word:", secretWord);
-console.log("Input word:", inputWord);
 

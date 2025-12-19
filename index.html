@@ -12,49 +12,46 @@
 </head>
 <body>
     <header>
-        <h1 id="title-text">WELCOME TO WORDLE</h1>
-        <hr />
-        <p id="display-message"></p>
-        <button id="reset-btn">RESET</button>
+        <h1 id="title-text">WORDLE GAME</h1>
     </header>
 
     <div class="game-container">
         <div class="board-container">
         <div class="board">
             <div id="row0" class="row">
-                <div id='row0-0' class="tiles">G</div>
-                <div id='row0-1' class="tiles">A</div>
-                <div id='row0-2' class="tiles">M</div>
-                <div id='row0-3' class="tiles">E</div>
-                <div id='row0-4' class="tiles">S</div>
+                <div id='row0-0' class="tiles"></div>
+                <div id='row0-1' class="tiles"></div>
+                <div id='row0-2' class="tiles"></div>
+                <div id='row0-3' class="tiles"></div>
+                <div id='row0-4' class="tiles"></div>
             </div>
             <div id="row1" class="row">
-                <div id='row1-0' class="tiles">G</div>
-                <div id='row1-1' class="tiles">A</div>
-                <div id='row1-2' class="tiles">M</div>
-                <div id='row1-3' class="tiles">E</div>
-                <div id='row1-4' class="tiles">S</div>
+                <div id='row1-0' class="tiles"></div>
+                <div id='row1-1' class="tiles"></div>
+                <div id='row1-2' class="tiles"></div>
+                <div id='row1-3' class="tiles"></div>
+                <div id='row1-4' class="tiles"></div>
             </div>
                 <div id="row2" class="row">
-                <div id='row2-0' class="tiles">G</div>
-                <div id='row2-1' class="tiles">A</div>
-                <div id='row2-2' class="tiles">M</div>
-                <div id='row2-3' class="tiles">E</div>
-                <div id='row2-4' class="tiles">S</div>
+                <div id='row2-0' class="tiles"></div>
+                <div id='row2-1' class="tiles"></div>
+                <div id='row2-2' class="tiles"></div>
+                <div id='row2-3' class="tiles"></div>
+                <div id='row2-4' class="tiles"></div>
             </div>
                 <div id="row3" class="row">
-                <div id='row3-0' class="tiles">G</div>
-                <div id='row3-1' class="tiles">A</div>
-                <div id='row3-2' class="tiles">M</div>
-                <div id='row3-3' class="tiles">E</div>
-                <div id='row3-4' class="tiles">S</div>
+                <div id='row3-0' class="tiles"></div>
+                <div id='row3-1' class="tiles"></div>
+                <div id='row3-2' class="tiles"></div>
+                <div id='row3-3' class="tiles"></div>
+                <div id='row3-4' class="tiles"></div>
             </div>
                 <div id="row4" class="row">
-                <div id='row4-0' class="tiles">G</div>
-                <div id='row4-1' class="tiles">A</div>
-                <div id='row4-2' class="tiles">M</div>
-                <div id='row4-3' class="tiles">E</div>
-                <div id='row4-4' class="tiles">S</div>
+                <div id='row4-0' class="tiles"></div>
+                <div id='row4-1' class="tiles"></div>
+                <div id='row4-2' class="tiles"></div>
+                <div id='row4-3' class="tiles"></div>
+                <div id='row4-4' class="tiles"></div>
             </div>
                 <div id="row5" class="row">
                 <div id='row5-0' class="tiles"></div>
@@ -70,22 +67,31 @@
     <div class="input-container">
         <div class="input-section">
             <input type="text" maxlength="5" minlength="5"  oninput="lettersOnly(this)">
-            <button class="btn" id="enter-btn">
-                ENTER
-            </button>
+            <button class="btn" id="enter-btn">ENTER</button>
         </div>
     </div>
+
+    <hr>
+
+<div id="gameOverlay" class="overlay">
+  <div class="popup-content">
+    <h2>Game Complete!</h2>
+    <p id="display-message"></p>
+    <button id="reset-btn">PLAY AGAIN</button>
+  </div>
+</div>
+
 
     <section class="instructions">
         <h2 id="instruction-title">How to Play</h2>
         <p id="instructions">
-            The player attempts to guess a five-letter English word in six turns. The player enters a valid five-letter English word into the input, then clicks the Enter button or presses Enter on the keyboard. 
-            <ul>
-                <li>Green tiles show a guessed letter in the correct position</li>
-                <li>Yellow tiles indicate that the word contains the letter but in the wrong position</li>
-                <li>Gray tiles mean the letters are not in the word</li>
-            </ul>
-            Letters can repeat, and feedback applies accordingly.
+        The player attempts to guess a five-letter English word in six turns. 
+        The player enters a valid five-letter English word into the input, 
+        then clicks the Enter button or presses Enter on the keyboard.<br>
+        🟩Green tiles show guessed letter in the correct position.<br>
+        🟨Yellow tiles indicate that the word contains the letter but in the wrong position.<br>
+        ⬜️Gray tiles mean the letters are not in the word.<br>
+        Letters can repeat, and feedback applies accordingly.
         </p>
     </section>
 

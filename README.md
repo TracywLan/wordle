@@ -1,8 +1,8 @@
-# Wordle 🎯
+# Wordle
 
-![Game Screenshot](image-1.png)
+![Game Screenshot](image.png)
 
-## 🧩 Game Information
+## Game Information
 
 **Name:** Wordle  
   
@@ -14,17 +14,17 @@ I chose to make Wordle because I've been a big fan of the game. My friends and I
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 **Play the game:**  
-👉 [Wordle Live Demo](https://tracywlan.github.io/wordle/)
+[Wordle Live Demo](https://tracywlan.github.io/wordle/)
 
 **View planning materials:**  
-📄 [Project Planning Document](https://github.com/TracywLan/wordle/blob/main/Browser-based-game-planning.md)
+[Project Planning Document](https://github.com/TracywLan/wordle/blob/main/Browser-based-game-planning.md)
 
 ---
 
-## 🧱 Technologies Used
+## Technologies Used
 
 - JavaScript  
 - HTML  
@@ -32,7 +32,7 @@ I chose to make Wordle because I've been a big fan of the game. My friends and I
 
 ---
 
-## 📖 Attributions
+## Attributions
 
 **Word Sources:**  
 - [Wordle Words (MrJanHorak)](https://github.com/MrJanHorak/wordle-solution-helper/blob/main/src/data/wordle-words.json)  
@@ -44,7 +44,7 @@ I chose to make Wordle because I've been a big fan of the game. My friends and I
 
 ---
 
-## 🧭 Next Steps
+## Next Steps
 
 - Display letters that have been used in the puzzle  
 - Allow input directly into boxes (like the real Wordle game)  
@@ -52,4 +52,4 @@ I chose to make Wordle because I've been a big fan of the game. My friends and I
 
 ---
 
-*Created with ❤️ by [Tracy Lan](https://github.com/TracywLan)*
+*Created by [Tracy Lan](https://github.com/TracywLan)*
