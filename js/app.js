@@ -16,6 +16,7 @@ const inputElement = document.querySelector('input')
 const tiles = document.querySelectorAll('.tiles')
 const displayMessage = document.querySelector('#display-message')
 const resetBtn = document.getElementById('reset-btn')
+const overlayElement = document.getElementById('gameOverlay')
 
 /*---------------------------- Variables (state) ----------------------------*/
 
@@ -112,6 +113,7 @@ function winCondition(inputWord){
         btnElement.classList.add('no-hover');
         displayMessage.textContent = 'Congrats! You won!'
         resetBtn.style.display = "block"
+        showOverlay()
 
     }else if (inputWord !== secretWord && wordArray.length === 6) {
         inputElement.disabled = true;
@@ -119,38 +121,47 @@ function winCondition(inputWord){
         btnElement.classList.add('no-hover');
         displayMessage.textContent = `The word was ${secretWord}`
         resetBtn.style.display = "block"
+        showOverlay()
     } else{
         return;
     }
 }
 
 
-    function lettersOnly(input) {
-        input.value = input.value.replace(/[^a-zA-Z]/g, '');
-    }
+function lettersOnly(input) {
+    input.value = input.value.replace(/[^a-zA-Z]/g, '');
+}
 
 
-    function handleButtonAction(){
-        const trimmedValue = inputElement.value.trim().toUpperCase();
-        const isRealWord = wordleDictionary.includes(trimmedValue.toLowerCase());
-        
-        if (trimmedValue.length !== 5){
-            displayMessage.textContent = 'Must be a 5 letter word!'
-        }
-        else if (!isRealWord || wordArray.includes(trimmedValue)){
-            displayMessage.textContent = 'Please enter a valid word'
-        }
-        else {
-            displayMessage.textContent = '';
-            inputWord = trimmedValue;
-            wordArray.push(trimmedValue);
-            inputElement.value = '';
-            inputElement.focus();
-            letterInput(inputWord)
-            updateTileColor(inputWord)
-            winCondition(inputWord)
-        }
+function handleButtonAction(){
+    const trimmedValue = inputElement.value.trim().toUpperCase();
+    const isRealWord = wordleDictionary.includes(trimmedValue.toLowerCase());
+    
+    if (trimmedValue.length !== 5){
+        displayMessage.textContent = 'Must be a 5 letter word!'
     }
+    else if (!isRealWord || wordArray.includes(trimmedValue)){
+        displayMessage.textContent = 'Please enter a valid word'
+    }
+    else {
+        displayMessage.textContent = '';
+        inputWord = trimmedValue;
+        wordArray.push(trimmedValue);
+        inputElement.value = '';
+        inputElement.focus();
+        letterInput(inputWord)
+        updateTileColor(inputWord)
+        winCondition(inputWord)
+    }
+}
+
+function showOverlay() {
+    overlayElement.classList.add('show');
+}
+
+function hideOverlay() {
+    overlayElement.classList.remove('show');
+}
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -164,11 +175,12 @@ inputElement.addEventListener('keydown', function(e) {
 });
 
 resetBtn.addEventListener('click',()=>{
-reset()
+reset();
+hideOverlay();
 });
 
 reset()
-// console.log(tiles);
+
 console.log('Word array',wordArray);
 console.log("Secret word:", secretWord);
 console.log("Input word:", inputWord);
